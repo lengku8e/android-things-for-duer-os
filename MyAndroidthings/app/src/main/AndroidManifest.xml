@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="e.sunhailong01.myandroidthings">
+
+    <application>
+        <uses-library android:name="com.google.android.things" />
+
+        <activity android:name=".MainActivity">
+            <!-- Launch activity as default from Android Studio -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Launch activity automatically on boot -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.IOT_LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- begin: duer iot sdk -->
+        <meta-data
+            android:name="com.baidu.dueriot.APP_KEY"
+            android:value="4uGTHobeKLPxcXtdPZmnj9tuBVSh5XyL" />
+        <meta-data
+            android:name="com.baidu.dueriot.SECRET_KEY"
+            android:value="oHSajdYMK09FH2uoFAI1Dso205vYXgG4" />
+        <!-- end : duer iot sdk -->
+        <activity
+            android:name="com.baidu.iot.sdk.iam.SdkOauthActivity"
+            android:screenOrientation="portrait" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+</manifest>
